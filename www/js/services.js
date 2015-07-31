@@ -47,4 +47,44 @@ angular.module('starter.services', [])
       return null;
     }
   };
+})
+
+.factory('dbPlans', function($http) {
+  var promise;
+  var dbPlans = {
+    async: function() {
+      if ( !promise ) {
+        // $http returns a promise, which has a then function, which also returns a promise
+        promise = $http.get('json/dbPlans.json').then(function (response) {
+          // The then function here is an opportunity to modify the response
+          console.log(response.data);
+          // The return value gets picked up by the then in the controller.
+          return response.data;
+        });
+      }
+      // Return the promise to the controller
+      return promise;
+    }
+  };
+  return dbPlans;
+})
+
+.factory('dbUser', function($http) {
+  var promise;
+  var dbUser = {
+    async: function() {
+      if ( !promise ) {
+        // $http returns a promise, which has a then function, which also returns a promise
+        promise = $http.get('json/dbUser.json').then(function (response) {
+          // The then function here is an opportunity to modify the response
+          console.log(response.data);
+          // The return value gets picked up by the then in the controller.
+          return response.data;
+        });
+      }
+      // Return the promise to the controller
+      return promise;
+    }
+  };
+  return dbUser;
 });

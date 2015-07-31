@@ -1,0 +1,26 @@
+<button ng-click="showMax =!showMax">change your max lifts</button>
+<change-max
+  ng-show="showMax"
+>
+</change-max>
+<div ng-repeat="plans in data.plans">
+  <div class="col-sm-12">
+    <h1> {{plans.plan}} </h1>
+  </div>
+  <div ng-repeat="workout in plans.workouts">
+    <div class="col-sm-12">
+      Number: {{workout.workout}}
+    </div>
+    <div ng-repeat="week in workout.weeks">
+      <div class="col-sm-12">
+        Week: {{week.week}}
+      </div>
+        <exercise-day 
+          ng-repeat="day in week.days"
+          day="day"
+          user="dbUser"
+          data="data">
+        </exercise-day>
+    </div>
+  </div>
+</div>

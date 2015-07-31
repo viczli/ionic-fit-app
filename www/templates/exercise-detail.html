@@ -1,0 +1,48 @@
+<div class="item {{exercise.abbr}}">
+<!--   {{ header }}  -->
+  <div class="exerciseName">
+    <span>
+      {{ exercise.exercise }}
+    </span>
+  </div>
+  <div class="">
+    <div class="row">
+      <div class="col" ng-repeat="(key, data) in exercise.sets[0]" ng-show="!$first">
+        {{key}} <!-- titles -->
+      </div>
+      <div class="col">
+        inol
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div ng-repeat="set in exercise.sets">
+          {{set.percentage}}
+        </div>
+      </div>
+      <div class="col">
+        <div ng-repeat="set in exercise.sets">
+          {{set.reps}}
+        </div>
+      </div>
+      <div class="col">
+        <div ng-repeat="set in exercise.sets">
+          {{set.sets}}
+        </div>
+      </div>
+      <div class="col">
+        <div ng-repeat="set in exercise.sets">
+          {{set.percentage/100*numbers | number:0}}
+        </div>
+      </div> 
+      <div class="col">
+        <div class="inolNumber" ng-repeat="set in exercise.sets">
+          {{set.reps*set.sets/(100-set.percentage)*4 | number:1}}
+        </div>
+      </div>
+    </div>
+    <div class="col- col-offset-80 inolexercise">
+      {{ inolSet | number:1 }}
+    </div>
+  </div>
+</div>

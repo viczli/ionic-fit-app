@@ -25,4 +25,22 @@ angular.module('starter.controllers', [])
   $scope.settings = {
     enableFriends: true
   };
-});
+})
+
+.controller('overviewCtrl', function(dbPlans, dbUser, $scope, $http) {
+  $scope.data = {};
+  $scope.dbUser = {};
+    // Call the async method and then do stuff with what is returned inside our own then function
+    dbPlans.async().then(function(data) {
+      $scope.data = data[0];
+      console.log(" got dbPlans data")
+    });
+  
+    // Call the async method and then do stuff with what is returned inside our own then function
+    dbUser.async().then(function(data) {
+      $scope.dbUser = data[0];
+      $scope.selectedExercise = $scope.dbUser.max[0]; // first option is not empty
+      console.log("got dbUser data")
+
+    })
+})

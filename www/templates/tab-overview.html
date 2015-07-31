@@ -1,0 +1,30 @@
+<ion-view view-title="Overview">
+  <ion-content>
+    <button ng-click="showMax =!showMax">change your max lifts</button>
+    <change-max ng-show="showMax"></change-max>
+    <div class="list" ng-repeat="plans in data.plans">
+        <div class="item item-divider">
+          <h1>
+            {{plans.plan}}
+          </h1>
+        </div>
+        <div ng-repeat="workout in plans.workouts">
+          <div class="item item-divider">
+            Number: {{workout.workout}}
+          </div>
+          <div ng-repeat="week in workout.weeks">
+            <div class="item item-divider">
+              Week: {{week.week}}
+            </div>
+              <exercise-day 
+                ng-repeat="day in week.days"
+                day="day"
+                user="dbUser"
+                data="data">
+              </exercise-day>
+          </div>
+        </div>
+    </div>
+      
+  </ion-content>
+</ion-view>

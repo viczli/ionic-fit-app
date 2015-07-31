@@ -1,0 +1,26 @@
+[
+    {
+        "firstname": "Ruofan",
+        "lastname": "Wang",
+        "age": 26,
+        "height": 180,
+        "weight": 82.5,
+        "max": [
+            {
+                "exercise": "Barbell Bench Press",
+                "abbr": "BBP",
+                "lift": 100
+            },
+            {
+                "exercise": "Barbell Dead Lift",
+                "abbr": "BDL",
+                "lift": 170
+            },
+            {
+                "exercise": "Barbell Back Squat",
+                "abbr": "BBS",
+                "lift": 140
+            }
+        ]
+    }
+]

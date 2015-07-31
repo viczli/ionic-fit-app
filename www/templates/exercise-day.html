@@ -1,0 +1,23 @@
+<div class="list">
+  <div class="item item-divider">
+    Day: {{day.day}}
+   <i class="icon-right ion-information-circled" ng-click="showInol = !showInol">
+    
+    </i>
+  </div>
+
+  <div ng-show="showInol" class="item">
+    <div>Total Intensity: {{ BBP+BBS+BDL | number:1 }} </div>
+    <div ng-if="BBP !== 0">Barbell Bench Press: {{ BBP | number:1 }} </div>
+    <div ng-if="BBS !== 0">Barbell Back Squat: {{ BBS | number:1 }} </div>
+    <div ng-if="BDL !== 0">Barbell Dead Lift: {{ BDL | number:1 }} </div>
+  </div>
+
+  <exercise-detail 
+    ng-repeat="exercise in day.exercises" 
+    exercise="exercise" 
+    user="dbUser"
+    data="data"
+    >
+  </exercise-detail>
+</div>

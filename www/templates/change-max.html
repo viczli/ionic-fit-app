@@ -1,0 +1,8 @@
+<div class="col-sm-12">
+	<select ng-model="selectedExercise" ng-options="max.exercise for max in dbUser.max">
+	</select>
+	<input type="text" ng-model="selectedExercise.lift"> 
+	<button class="refresh" > update </button>
+
+	<pre>{{selectedExercise | json}} </pre>
+</div>
