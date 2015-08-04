@@ -35,63 +35,53 @@ angular.module('starter', [
   $stateProvider
 
   // setup an abstract state for the tabs directive
-    .state('tab', {
-    url: "/tab",
+    .state('app', {
+    url: "/app",
     abstract: true,
-    templateUrl: "templates/tabs.html"
+    templateUrl: "templates/side-menu.html"
   })
 
   // Each tab has its own nav history stack:
 
-  .state('tab.dash', {
-    url: '/dash',
+  .state('app.dash', {
+    url: '/dashboard',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
+      'app-content': {
+        templateUrl: 'templates/app-dash.html',
         controller: 'DashCtrl'
       }
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
-
-  .state('tab.account', {
+  .state('app.account', {
     url: '/account',
     views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
+      'app-content': {
+        templateUrl: 'templates/app-account.html',
         controller: 'AccountCtrl'
       }
     }
   })
-  .state('tab.overview', {
-    url: '/overview',
+  .state('app.plans', {
+    url: '/plans',
     views: {
-      'tab-overview': {
-        templateUrl: 'templates/tab-overview.html',
-        controller: 'overviewCtrl'
+      'app-content': {
+        templateUrl: 'templates/app-plans.html',
+        controller: 'plansCtrl'
       }
     }
-  });
+  })
+  .state('app.plans-workouts', {
+    url: '/plans/:workout',
+    views: {
+      'app-content': {
+        templateUrl: 'templates/plans-workouts.html',
+        controller: "workoutsCtrl"
+      }
+    }
+  })
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/app/dashboard');
 
 });

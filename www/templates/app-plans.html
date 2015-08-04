@@ -1,8 +1,7 @@
-<ion-view view-title="Overview">
+<ion-view view-title="Plans">
   <ion-content>
-    <button ng-click="showMax =!showMax">change your max lifts</button>
-    <change-max ng-show="showMax"></change-max>
-    <div class="list" ng-repeat="plans in data.plans">
+      <!--     <button class="refresh" ng-click="modal.show()">change your max lifts</button>
+        <div class="list" ng-repeat="plans in data.plans">
         <div class="item item-divider">
           <h1>
             {{plans.plan}}
@@ -24,7 +23,13 @@
               </exercise-day>
           </div>
         </div>
+    </div> -->
+    <div class="list">
+      <div ng-repeat="plans in data.plans">
+        <a href="#/app/plans/{{plans.plan}}" class="item">
+          {{plans.plan}}
+        </a>
+      </div>
     </div>
-      
   </ion-content>
 </ion-view>

@@ -14,8 +14,6 @@ var app = angular.module("directives", [])
     },
     controller: function($scope) {
       $scope.header= "Exercise " + num++;
-      setTimeout(function(){
-        }, 1000)
     },
     link: function($scope, element, attrs){
       // timeout after loading data
@@ -35,17 +33,17 @@ var app = angular.module("directives", [])
         var defineExercise = element[0].getElementsByClassName("exerciseName")[0].innerText;
         if(defineExercise === "Barbell Bench Press"){
           $scope.searchVal ="Barbell Bench Press"
-          console.info($scope.searchVal)
+          // console.info($scope.searchVal)
           $scope.numbers = element.checker();
         }
         if(defineExercise === "Barbell Back Squat"){
           $scope.searchVal ="Barbell Back Squat"
-          console.info($scope.searchVal)
+          // console.info($scope.searchVal)
           $scope.numbers = element.checker();
         }
         if(defineExercise === "Barbell Dead Lift"){
           $scope.searchVal ="Barbell Dead Lift"
-          console.info($scope.searchVal)
+          // console.info($scope.searchVal)
           $scope.numbers = element.checker();
         }
       }
@@ -53,7 +51,7 @@ var app = angular.module("directives", [])
       $scope.searchField ="exercise";
       $scope.searchVal = "";
       element.checker = function (searchField, searchVal){
-        console.log("--checker")
+        // console.log("--checker")
         var searchDb = $scope.dbUser;
         var searchVal = $scope.searchVal;
         var searchField =  $scope.searchField;
@@ -64,12 +62,28 @@ var app = angular.module("directives", [])
             }
         }
       }
+
       element.inolSumexercise = function(){
-        var storedData = element[0].getElementsByClassName("inolNumber");
+        var storedData = element[0].getElementsByClassName("inolNumber")
+        var exerciseChecker = element[0].getElementsByClassName("exerciseName")[0].innerText
         var total = 0;
         for(var i = 0; i < storedData.length; i++){
             total += parseFloat(storedData[i].innerText)
-            $scope.inolSet = total;
+            $scope.inolSet = total
+            // if (exerciseChecker === "Barbell Bench Press"){ 
+            //   $scope.BBP = $scope.BBP + $scope.inolSet
+            //   console.log($scope.BBP)
+            // }
+            // if (exerciseChecker === "Barbell Back Squat"){ 
+            //   $scope.BBS = $scope.BBS + $scope.inolSet
+            //   console.log($scope.BBS)
+            // }           
+            // if (exerciseChecker === "Barbell Back Squat"){
+            // console.error("BBS")
+            // }
+            // if (exerciseChecker === "Barbell Dead Lift"){
+            // console.error("BDL")
+            // }
         }
       }
     }
@@ -85,6 +99,8 @@ var app = angular.module("directives", [])
       day: "=",
       dbUser:"=user",
       data:"=data"      
+    },
+    controller: function($scope){
     },
     link: function($scope, element, attrs){
       $timeout(function() {
@@ -104,31 +120,55 @@ var app = angular.module("directives", [])
         $scope.BBP = 0;
         $scope.BBS = 0;
         $scope.BDL = 0;
-
+      
         for(var i = 0; i < defineExercise.length; i++){
           exersizeChecker = defineExercise[i].innerText
-          console.log(exersizeChecker)
+        }
+        function checkBBP() {
           if (exersizeChecker === "Barbell Bench Press"){
             for(var i = 0; i < BBP.length; i++){
               $scope.BBP =  $scope.BBP + parseFloat(BBP[i].getElementsByClassName("inolexercise")[0].innerText)
               exersizeChecker = defineExercise[i].innerText
-            }
-          } 
+            } 
+          }             
+        }
+        function checkBBS() {
           if (exersizeChecker === "Barbell Back Squat"){
             for(var i = 0; i < BBS.length; i++){
               $scope.BBS =  $scope.BBS + parseFloat(BBS[i].getElementsByClassName("inolexercise")[0].innerText)
               exersizeChecker = defineExercise[i].innerText
             }
           }
+        }
+        function checkBDL() {
           if (exersizeChecker === "Barbell Dead Lift"){
             for(var i = 0; i < BDL.length; i++){
               $scope.BDL =  $scope.BDL + parseFloat(BDL[i].getElementsByClassName("inolexercise")[0].innerText)
               exersizeChecker = defineExercise[i].innerText
             }
           }
-          break;
-        }    
+        }  
+        $.when(checkBBP(), checkBBS(), checkBDL())
       }
+    }
+  }
+})
+
+.directive("exerciseOverview", function($timeout){
+  return{
+    restrict: "E",
+    replace: true,
+    templateUrl: "templates/exercise-overview.html",
+    scope:{
+      day: "=",
+      dbUser:"=user",
+      data:"=data"      
+    },
+    controller: function($scope){
+
+    },
+    link: function($scope, element, attrs){
+
     }
   }
 })
@@ -136,20 +176,20 @@ var app = angular.module("directives", [])
 .directive("changeMax", function(){
   return{
     restrict: "E",
-    replace: true,
     templateUrl: "templates/change-max.html",
-    link: function (scope, element, attrs) {
+    link: function ($scope, element, attrs) {
     element.bind("keydown keypress", function (event) {
         if(event.which === 13) {
-            scope.$apply(function (){
-                scope.$eval(attrs.ngEnter);
+            $scope.$apply(function (){
+                $scope.$eval(attrs.ngEnter);
+                console.log("updated")
             });
-              console.log('hello')
-
             $(".refresh").click()
+            $scope.modal.hide()
             event.preventDefault();
         }
       });
+    console.log("test")
     }
   }
 })

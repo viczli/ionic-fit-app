@@ -1,14 +1,19 @@
 <div class="item {{exercise.abbr}}">
-<!--   {{ header }}  -->
-  <div class="exerciseName">
+<!--   <div ng-show="showInol{{day.day}}" class="item">
+    <div>Total Intensity: {{ BBP+BBS+BDL | number:1 }} </div>
+    <div ng-if="BBP !== 0">Barbell Bench Press: {{ BBP | number:1 }} </div>
+    <div ng-if="BBS !== 0">Barbell Back Squat: {{ BBS | number:1 }} </div>
+    <div ng-if="BDL !== 0">Barbell Dead Lift: {{ BDL | number:1 }} </div>
+  </div> -->
+  <div id="exerciseName" class="exerciseName" ng-click="showExcersize = !showExcersize">
     <span>
       {{ exercise.exercise }}
     </span>
   </div>
-  <div class="">
+  <div ng-show="showExcersize">
     <div class="row">
       <div class="col" ng-repeat="(key, data) in exercise.sets[0]" ng-show="!$first">
-        {{key}} <!-- titles -->
+        {{key | limitTo: 6}} <!-- titles -->
       </div>
       <div class="col">
         inol

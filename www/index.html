@@ -25,10 +25,24 @@
     <!--
       The nav bar that will be updated as we navigate between views.
     -->
-    <ion-nav-bar class="bar-stable">
-      <ion-nav-back-button>
-      </ion-nav-back-button>
-    </ion-nav-bar>
+
+    <ion-side-menus>
+      <!-- Center content -->
+      <ion-side-menu-content ng-controller="ContentController">
+      </ion-side-menu-contenta>
+
+      <!-- Left menu -->
+      <ion-side-menu side="left">
+      </ion-side-menu>
+
+      <!-- Right menu -->
+      <ion-side-menu side="right">
+      </ion-side-menu>
+
+      <ion-side-menu-content>
+      <!-- Main content, usually <ion-nav-view> -->
+      </ion-side-menu-content>
+    </ion-side-menus>
     <!--
       The views will be rendered in the <ion-nav-view> directive below
       Templates are in the /templates folder (but you could also

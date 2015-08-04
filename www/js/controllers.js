@@ -27,20 +27,56 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('overviewCtrl', function(dbPlans, dbUser, $scope, $http) {
-  $scope.data = {};
-  $scope.dbUser = {};
-    // Call the async method and then do stuff with what is returned inside our own then function
-    dbPlans.async().then(function(data) {
-      $scope.data = data[0];
-      console.log(" got dbPlans data")
-    });
-  
-    // Call the async method and then do stuff with what is returned inside our own then function
-    dbUser.async().then(function(data) {
-      $scope.dbUser = data[0];
-      $scope.selectedExercise = $scope.dbUser.max[0]; // first option is not empty
-      console.log("got dbUser data")
 
-    })
+.controller('plansCtrl', function(dbPlans, dbUser, $scope, $http){
+  $scope.data =  dbPlans.async().then(function(data) {
+    $scope.data = data[0];
+    console.error(data[0].plans)
+  })
+  dbUser.async().then(function(data) {
+    $scope.dbUser = data[0];
+  })
+})
+.controller('workoutsCtrl', function(dbPlans, dbUser, $scope, $http, $stateParams, $ionicModal){
+  console.log()
+  $scope.data =  dbPlans.async().then(function(data) {
+    $scope.data = data[0];
+    $scope.whichWorkout = $stateParams.workout
+    console.error(data[0].plans)
+  })
+  // Call the async method and then do stuff with what is returned inside our own then function
+  dbUser.async().then(function(data) {
+    $scope.dbUser = data[0];
+  })
+
+  $ionicModal.fromTemplateUrl('/templates/modal.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function(modal) {
+      $scope.modal = modal;
+    });
+    $scope.openModal = function() {
+      $scope.modal.show();
+    };
+    $scope.closeModal = function() {
+      $scope.modal.hide();
+    };
+    //Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function() {
+      $scope.modal.remove();
+    });
+    // Execute action on hide modal
+    $scope.$on('modal.hidden', function() {
+      // Execute action
+    });
+    // Execute action on remove modal
+    $scope.$on('modal.removed', function() {
+      // Execute action
+  });
+})
+
+.controller('ContentController', function($scope, $ionicSideMenuDelegate) {
+  $scope.toggleLeft = function() {
+    $ionicSideMenuDelegate.toggleLeft();
+  };
 })

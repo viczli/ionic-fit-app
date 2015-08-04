@@ -41,7 +41,10 @@ angular.module('starter.services', [])
     get: function(chatId) {
       for (var i = 0; i < chats.length; i++) {
         if (chats[i].id === parseInt(chatId)) {
+          console.log(typeofchats[i].id)
+
           return chats[i];
+
         }
       }
       return null;
@@ -57,7 +60,6 @@ angular.module('starter.services', [])
         // $http returns a promise, which has a then function, which also returns a promise
         promise = $http.get('json/dbPlans.json').then(function (response) {
           // The then function here is an opportunity to modify the response
-          console.log(response.data);
           // The return value gets picked up by the then in the controller.
           return response.data;
         });
@@ -66,7 +68,7 @@ angular.module('starter.services', [])
       return promise;
     }
   };
-  return dbPlans;
+  return dbPlans
 })
 
 .factory('dbUser', function($http) {
@@ -77,7 +79,6 @@ angular.module('starter.services', [])
         // $http returns a promise, which has a then function, which also returns a promise
         promise = $http.get('json/dbUser.json').then(function (response) {
           // The then function here is an opportunity to modify the response
-          console.log(response.data);
           // The return value gets picked up by the then in the controller.
           return response.data;
         });
