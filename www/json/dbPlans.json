@@ -15,8 +15,9 @@
                                         "day": 1,
                                         "exercises": [
                                             {
-                                                "exercise": "Barbell Back Squat",
-                                                "abbr": "BBS",
+                                                "exercise": "Barbell Bench Press",
+                                                "abbr": "BBP",
+                                                "number": 1,
                                                 "sets": [
                                                     { 
                                                         "set": 1,
@@ -110,6 +111,7 @@
                                             {
                                                 "exercise": "Barbell Dead Lift",
                                                 "abbr": "BDL",
+                                                "number": 1,
                                                 "sets": [
                                                     { 
                                                         "set": 1,
@@ -339,6 +341,379 @@
                                                         "set": 3,
                                                         "percentage": 65,
                                                         "reps": 6,
+                                                        "sets": 4,
+                                                        "weight": 0
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "workout": 31,
+                        "weeks": [
+                            {
+                                "week": 1,
+                                "days": [
+                                    {
+                                        "day": 1,
+                                        "exercises": [
+                                            {
+                                                "exercise": "Barbell Bench Press",
+                                                "abbr": "BBP",
+                                                "sets": [
+                                                    { 
+                                                        "set": 1,
+                                                        "percentage": 50,
+                                                        "reps": 5,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 2,
+                                                        "percentage": 60,
+                                                        "reps": 4,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 3,
+                                                        "percentage": 70,
+                                                        "reps": 3,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 4,
+                                                        "percentage": 80,
+                                                        "reps": 2,
+                                                        "sets": 4,
+                                                        "weight": 0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "exercise": "Barbell Back Squat",
+                                                "abbr": "BBS",
+                                                "sets": [
+                                                    { 
+                                                        "set": 1,
+                                                        "percentage": 50,
+                                                        "reps": 5,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 2,
+                                                        "percentage": 60,
+                                                        "reps": 5,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 3,
+                                                        "percentage": 70,
+                                                        "reps": 2,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 4,
+                                                        "percentage": 70,
+                                                        "reps": 4,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 5,
+                                                        "percentage": 70,
+                                                        "reps": 6,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 6,
+                                                        "percentage": 70,
+                                                        "reps": 6,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 7,
+                                                        "percentage": 70,
+                                                        "reps": 7,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 8,
+                                                        "percentage": 70,
+                                                        "reps": 5,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 9,
+                                                        "percentage": 70,
+                                                        "reps": 3,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    }
+                                                ]
+                                            },  
+                                            {
+                                                "exercise": "Barbell Bench Press",
+                                                "abbr": "BBP",
+                                                "sets": [
+                                                    { 
+                                                        "set": 1,
+                                                        "percentage": 55,
+                                                        "reps": 3,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 2,
+                                                        "percentage": 65,
+                                                        "reps": 3,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 3,
+                                                        "percentage": 75,
+                                                        "reps": 3,
+                                                        "sets": 4,
+                                                        "weight": 0
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "day": 2,
+                                        "exercises": [
+                                            {
+                                                "exercise": "Barbell Back Squat",
+                                                "abbr": "BBS",
+                                                "sets": [
+                                                    { 
+                                                        "set": 1,
+                                                        "percentage": 50,
+                                                        "reps": 3,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 2,
+                                                        "percentage": 60,
+                                                        "reps": 3,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 3,
+                                                        "percentage": 70,
+                                                        "reps": 3,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 4,
+                                                        "percentage": 80,
+                                                        "reps": 2,
+                                                        "sets": 4,
+                                                        "weight": 0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "exercise": "Barbell Dead Lift",
+                                                "abbr": "VDL",
+                                                "sets": [
+                                                    { 
+                                                        "set": 1,
+                                                        "percentage": 50,
+                                                        "reps": 5,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 2,
+                                                        "percentage": 60,
+                                                        "reps": 4,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 3,
+                                                        "percentage": 70,
+                                                        "reps":3,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 4,
+                                                        "percentage": 80,
+                                                        "reps": 2,
+                                                        "sets": 2,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 5,
+                                                        "percentage": 85,
+                                                        "reps": 1,
+                                                        "sets": 2,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 6,
+                                                        "percentage": 80,
+                                                        "reps": 2,
+                                                        "sets": 2,
+                                                        "weight": 0
+                                                    }
+                                                ]
+                                            },  
+                                            {
+                                                "exercise": "Barbell Dead Lift",
+                                                "abbr": "BDL",
+                                                "sets": [
+                                                    { 
+                                                        "set": 1,
+                                                        "percentage": 60,
+                                                        "reps": 3,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 2,
+                                                        "percentage": 70,
+                                                        "reps": 3,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 3,
+                                                        "percentage": 80,
+                                                        "reps": 2,
+                                                        "sets": 2,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 4,
+                                                        "percentage": 90,
+                                                        "reps": 1,
+                                                        "sets": 3,
+                                                        "weight": 0
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "day": 3,
+                                        "exercises": [
+                                            {
+                                                "exercise": "Barbell Back Squat",
+                                                "abbr": "BBS",
+                                                "sets": [
+                                                    { 
+                                                        "set": 1,
+                                                        "percentage": 55,
+                                                        "reps": 5,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 2,
+                                                        "percentage": 65,
+                                                        "reps": 4,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 3,
+                                                        "percentage": 75,
+                                                        "reps": 3,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 4,
+                                                        "percentage": 85,
+                                                        "reps": 2,
+                                                        "sets": 4,
+                                                        "weight": 0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "exercise": "Barbell Bench Press",
+                                                "abbr": "BBP",
+                                                "sets": [
+                                                    { 
+                                                        "set": 1,
+                                                        "percentage": 50,
+                                                        "reps": 5,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 2,
+                                                        "percentage": 60,
+                                                        "reps": 4,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 3,
+                                                        "percentage": 70,
+                                                        "reps": 3,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 4,
+                                                        "percentage": 80,
+                                                        "reps": 3,
+                                                        "sets": 4,
+                                                        "weight": 0
+                                                    }
+                                                ]
+                                            },  
+                                            {
+                                                "exercise": "Barbell Back Squat",
+                                                "abbr": "BBS",
+                                                "sets": [
+                                                    { 
+                                                        "set": 1,
+                                                        "percentage": 50,
+                                                        "reps": 3,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 2,
+                                                        "percentage": 60,
+                                                        "reps": 3,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 3,
+                                                        "percentage": 70,
+                                                        "reps": 3,
+                                                        "sets": 1,
+                                                        "weight": 0
+                                                    },
+                                                    {
+                                                        "set": 4,
+                                                        "percentage": 80,
+                                                        "reps": 2,
                                                         "sets": 4,
                                                         "weight": 0
                                                     }

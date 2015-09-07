@@ -9,17 +9,17 @@
             {
                 "exercise": "Barbell Bench Press",
                 "abbr": "BBP",
-                "lift": 100
+                "lift": 110
             },
             {
                 "exercise": "Barbell Dead Lift",
                 "abbr": "BDL",
-                "lift": 170
+                "lift": 200
             },
             {
                 "exercise": "Barbell Back Squat",
                 "abbr": "BBS",
-                "lift": 140
+                "lift": 150
             }
         ]
     }

@@ -123,6 +123,8 @@ var app = angular.module("directives", [])
       
         for(var i = 0; i < defineExercise.length; i++){
           exersizeChecker = defineExercise[i].innerText
+                    console.log(exersizeChecker)
+
         }
         function checkBBP() {
           if (exersizeChecker === "Barbell Bench Press"){
@@ -148,7 +150,7 @@ var app = angular.module("directives", [])
             }
           }
         }  
-        $.when(checkBBP(), checkBBS(), checkBDL())
+        checkBBP() || checkBBS() || checkBDL()
       }
     }
   }
