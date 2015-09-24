@@ -70,20 +70,6 @@ var app = angular.module("directives", [])
         for(var i = 0; i < storedData.length; i++){
             total += parseFloat(storedData[i].innerText)
             $scope.inolSet = total
-            // if (exerciseChecker === "Barbell Bench Press"){ 
-            //   $scope.BBP = $scope.BBP + $scope.inolSet
-            //   console.log($scope.BBP)
-            // }
-            // if (exerciseChecker === "Barbell Back Squat"){ 
-            //   $scope.BBS = $scope.BBS + $scope.inolSet
-            //   console.log($scope.BBS)
-            // }           
-            // if (exerciseChecker === "Barbell Back Squat"){
-            // console.error("BBS")
-            // }
-            // if (exerciseChecker === "Barbell Dead Lift"){
-            // console.error("BDL")
-            // }
         }
       }
     }
@@ -123,15 +109,22 @@ var app = angular.module("directives", [])
       
         for(var i = 0; i < defineExercise.length; i++){
           exersizeChecker = defineExercise[i].innerText
-                    console.log(exersizeChecker)
+          console.log(exersizeChecker)
 
         }
+
         function checkBBP() {
           if (exersizeChecker === "Barbell Bench Press"){
             for(var i = 0; i < BBP.length; i++){
               $scope.BBP =  $scope.BBP + parseFloat(BBP[i].getElementsByClassName("inolexercise")[0].innerText)
               exersizeChecker = defineExercise[i].innerText
-            } 
+
+              if(element.hasClass("bbpcheck") === false){
+                element.addClass("bbpcheck")
+                checkBBS();
+                checkBDL();
+              }
+            }   
           }             
         }
         function checkBBS() {
@@ -139,6 +132,12 @@ var app = angular.module("directives", [])
             for(var i = 0; i < BBS.length; i++){
               $scope.BBS =  $scope.BBS + parseFloat(BBS[i].getElementsByClassName("inolexercise")[0].innerText)
               exersizeChecker = defineExercise[i].innerText
+
+              if(element.hasClass("bbscheck") === false){
+                element.addClass("bbscheck")
+                checkBBP();
+                checkBDL();
+              }
             }
           }
         }
@@ -147,10 +146,38 @@ var app = angular.module("directives", [])
             for(var i = 0; i < BDL.length; i++){
               $scope.BDL =  $scope.BDL + parseFloat(BDL[i].getElementsByClassName("inolexercise")[0].innerText)
               exersizeChecker = defineExercise[i].innerText
+              if(element.hasClass("bdlcheck") === false){
+                element.addClass("bdlcheck")
+                checkBBP();
+                checkBBS();
+              }
             }
           }
-        }  
-        checkBBP() || checkBBS() || checkBDL()
+        }
+
+        // if(element.hasClass("bbpcheck") === false){
+        //   element.addClass("bbpcheck")
+        //   checkBBP()
+        // }
+        // if(element.hasClass("bbscheck") === false){
+        //   element.addClass("bbscheck")
+        //   checkBBS()
+        // }
+        // if(element.hasClass("bdlcheck") === false){
+        //   element.addClass("bdlcheck")
+        //   checkBDL()
+        // }
+
+
+        // if(element.hasClass("bbpcheck") === true){
+        //   element.removeClass("bbpcheck")
+        // }
+        // if(element.hasClass("bbscheck") === true){
+        //   element.removeClass("bbscheck")
+        // }
+        // if(element.hasClass("bdlcheck") === true){
+        //   element.removeClass("bdlcheck")
+        // }        
       }
     }
   }

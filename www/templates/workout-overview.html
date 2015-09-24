@@ -7,7 +7,7 @@
   <div class="col-sm-12">
     <h1> {{plans.plan}} </h1>
   </div>
-  <div ng-repeat="workout in plans.workouts">
+  <div ng-repeat="workout in plans.workouts" ng-click="{{workout.workout}} =!{{workout.workout}}">
     <div class="col-sm-12">
       Number: {{workout.workout}}
     </div>
@@ -19,7 +19,9 @@
           ng-repeat="day in week.days"
           day="day"
           user="dbUser"
-          data="data">
+          data="data"
+          ng-show="{{workout.workout}}"
+          >
         </exercise-day>
     </div>
   </div>

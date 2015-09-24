@@ -5,7 +5,7 @@
     <div ng-if="BBS !== 0">Barbell Back Squat: {{ BBS | number:1 }} </div>
     <div ng-if="BDL !== 0">Barbell Dead Lift: {{ BDL | number:1 }} </div>
   </div> -->
-  <div id="exerciseName number" class="exerciseName" ng-click="showExcersize = !showExcersize">
+  <div id="exerciseName number" class="exerciseName" ng-click="showExcersize = !showExcersize" data-inol-{{exercise.abbr}}>
     <span>
       {{ exercise.exercise }}
     </span>
